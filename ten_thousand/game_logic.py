@@ -16,7 +16,7 @@ class GameLogic():
          """
 
         r = tuple(random.randint(1, 6) for _ in range(num_dice))
-        print(r)
+        # print(r)
         return r
 
     def calculate_score(tup):
@@ -26,14 +26,11 @@ class GameLogic():
         '''
         unbanked_points = 0
         count_result = Counter(tup)
-        print(count_result.most_common())
+
 
         ###################### if dice roll was three pairs ######################
 
-        # if len(count_result.most_common()) == 3 and count_result[2]==2 and count_result[3]==2 and count_result[6]==2 :
-        #     unbanked_points = 1500
 
-        #     return unbanked_points
 
         if len(count_result.most_common()) == 3 and all(count == 2 for _, count in count_result.most_common()):
             unbanked_points = 1500
